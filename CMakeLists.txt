@@ -4,7 +4,7 @@ project(rpnx-djb-crypto)
 
 add_library(rpnx-djb-crypto)
 
-target_sources(rpnx-djb-crypto PRIVATE sources/xsalsa20.cpp sources/hsalsa20.cpp)
+target_sources(rpnx-djb-crypto PRIVATE sources/xsalsa.cpp sources/hsalsa.cpp)
 target_include_directories(rpnx-djb-crypto PUBLIC headers)
 set_target_properties(rpnx-djb-crypto PROPERTIES CXX_STANDARD 17)
 

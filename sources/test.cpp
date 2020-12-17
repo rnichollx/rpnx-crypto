@@ -1,4 +1,4 @@
-#include "rpnx/xsalsa20.hpp"
+#include "rpnx/xsalsa.hpp"
 
 #include <cstdio>
 #include <iostream>
@@ -49,12 +49,12 @@ int main()
 
     std::cout << "hello world" << std::endl;
 
-    rpnx::djb_crypto::stream_xsalsa20_xor_ic(crypt_out_impl.data(),
-                                             crypt_out_impl.data(),
-                                             crypt_out_impl.size(),
+    rpnx::djb_crypto::stream_xsalsa<20>(crypt_out_impl.begin(),
+                                             crypt_out_impl.end(),
+                                             crypt_out_impl.begin(),
                                              crypto_nonce_copy.data(),
-                                             0,
-                                             crypto_key.data());
+                                             crypto_key.data()
+                                             );
 
     for (std::byte c : crypt_out_impl)
     {
@@ -79,5 +79,6 @@ int main()
         return EXIT_FAILURE;
     }
 
+    std::cerr << "All tests passed" << std::endl;
     return EXIT_SUCCESS;
 }
