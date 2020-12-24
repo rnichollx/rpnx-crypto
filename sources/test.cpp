@@ -49,12 +49,7 @@ int main()
 
     std::cout << "hello world" << std::endl;
 
-    rpnx::djb_crypto::stream_xsalsa<20>(crypt_out_impl.begin(),
-                                             crypt_out_impl.end(),
-                                             crypt_out_impl.begin(),
-                                             crypto_nonce_copy.data(),
-                                             crypto_key.data()
-                                             );
+    rpnx::crypto::xsalsa<20>(crypt_out_impl.begin(),  crypt_out_impl.end(), crypt_out_impl.begin(), crypto_nonce_copy.data(), crypto_key.data() );
 
     for (std::byte c : crypt_out_impl)
     {

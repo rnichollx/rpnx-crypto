@@ -149,7 +149,7 @@ namespace rpnx::c_djb_crypto
     
 }
 
-namespace rpnx::djb_crypto
+namespace rpnx::crypto
 {
     template <std::size_t Rounds, typename OutIt, typename InIt, typename KeyIt>
     void core_salsa(OutIt out,

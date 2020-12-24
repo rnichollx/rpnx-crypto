@@ -95,7 +95,7 @@ namespace rpnx::c_djb_crypto
         store_little_endian32(out + 28, x9);
     }
 }
-namespace rpnx::djb_crypto
+namespace rpnx::crypto
 {
     template <std::size_t Rounds, typename OutIt, typename InputIt, typename KeyIt >
     void core_hsalsa(OutIt out,
